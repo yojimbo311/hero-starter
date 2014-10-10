@@ -92,6 +92,7 @@ var move = function(gameData, helpers) {
 };
 */
 
+<<<<<<< HEAD
 /*
 // The "Unwise Assassin"
 // This hero will attempt to kill the closest enemy hero. No matter what.
@@ -121,6 +122,57 @@ var move = function(gameData, helpers) {
 
 // The "Safe Diamond Miner"
 // This hero will attempt to capture enemy diamond mines.
+=======
+// // The "Northerner"
+// // This hero will walk North.  Always.
+// var move = function(gameData, helpers) {
+//   var myHero = gameData.activeHero;
+//   return 'North';
+// };
+
+// // The "Blind Man"
+// // This hero will walk in a random direction each turn.
+// var move = function(gameData, helpers) {
+//   var myHero = gameData.activeHero;
+//   var choices = ['North', 'South', 'East', 'West'];
+//   return choices[Math.floor(Math.random()*4)];
+// };
+
+// // The "Priest"
+// // This hero will heal nearby friendly champions.
+// var move = function(gameData, helpers) {
+//   var myHero = gameData.activeHero;
+//   if (myHero.health < 60) {
+//     return helpers.findNearestHealthWell(gameData);
+//   } else {
+//     return helpers.findNearestTeamMember(gameData);
+//   }
+// };
+
+// // The "Unwise Assassin"
+// // This hero will attempt to kill the closest enemy hero. No matter what.
+// var move = function(gameData, helpers) {
+//   var myHero = gameData.activeHero;
+//   if (myHero.health < 30) {
+//     return helpers.findNearestHealthWell(gameData);
+//   } else {
+//     return helpers.findNearestEnemy(gameData);
+//   }
+// };
+
+// // The "Careful Assassin"
+// // This hero will attempt to kill the closest weaker enemy hero.
+// var move = function(gameData, helpers) {
+//   var myHero = gameData.activeHero;
+//   if (myHero.health < 50) {
+//     return helpers.findNearestHealthWell(gameData);
+//   } else {
+//     return helpers.findNearestWeakerEnemy(gameData);
+//   }
+// };
+
+// // The "Safe Diamond Miner"
+>>>>>>> Revert hero file
 var move = function(gameData, helpers) {
   var myHero = gameData.activeHero;
 
@@ -132,7 +184,11 @@ var move = function(gameData, helpers) {
   });
   var distanceToHealthWell = healthWellStats.distance;
   var directionToHealthWell = healthWellStats.direction;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> Revert hero file
 
   if (myHero.health < 40) {
     //Heal no matter what if low health
@@ -146,6 +202,7 @@ var move = function(gameData, helpers) {
   }
 };
 
+<<<<<<< HEAD
 
 /*
 // The "Selfish Diamond Miner"
@@ -183,6 +240,40 @@ var move = function(gameData, helpers) {
   return helpers.findNearestHealthWell(gameData);
 };
 */
+=======
+// // The "Selfish Diamond Miner"
+// // This hero will attempt to capture diamond mines (even those owned by teammates).
+// var move = function(gameData, helpers) {
+//   var myHero = gameData.activeHero;
+
+//   //Get stats on the nearest health well
+//   var healthWellStats = helpers.findNearestObjectDirectionAndDistance(gameData.board, myHero, function(boardTile) {
+//     if (boardTile.type === 'HealthWell') {
+//       return true;
+//     }
+//   });
+
+//   var distanceToHealthWell = healthWellStats.distance;
+//   var directionToHealthWell = healthWellStats.direction;
+
+//   if (myHero.health < 40) {
+//     //Heal no matter what if low health
+//     return directionToHealthWell;
+//   } else if (myHero.health < 100 && distanceToHealthWell === 1) {
+//     //Heal if you aren't full health and are close to a health well already
+//     return directionToHealthWell;
+//   } else {
+//     //If healthy, go capture a diamond mine!
+//     return helpers.findNearestUnownedDiamondMine(gameData);
+//   }
+// };
+
+// // The "Coward"
+// // This hero will try really hard not to die.
+// var move = function(gameData, helpers) {
+//   return helpers.findNearestHealthWell(gameData);
+// }
+>>>>>>> Revert hero file
 
 // Export the move function here
 module.exports = move;
