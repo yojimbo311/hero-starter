@@ -225,7 +225,7 @@ var move = function(gameData, helpers) {
     if (canKillEnemyInNextTurn && myHero.health > 20) {
       // console.log("Killing the " + enemydir + " enemy!");
       return enemydir;
-    } else if (tm && ((myHero.health === 100 & tm.health < 100 && tmdis <= 6) || (tm.health < 50 && tmdis === 1))) {
+    } else if (tm && ((myHero.health === 100 & tm.health < 80 && tmdis <= 5) || (tm.health < 50 && tmdis === 1))) {
       // console.log("Going to heal the "+ tmdir +" teamate!");
       return tmdir;
     } else if (myHero.health < 70) {
