@@ -118,7 +118,7 @@ var move = function(gameData, helpers) {
 };
 */
 
-
+/*
 // The "Safe Diamond Miner"
 // This hero will attempt to capture enemy diamond mines.
 var move = function(gameData, helpers) {
@@ -144,6 +144,7 @@ var move = function(gameData, helpers) {
     return helpers.findNearestNonTeamDiamondMine(gameData);
   }
 };
+*/
 
 /*
 // The "Selfish Diamond Miner"
